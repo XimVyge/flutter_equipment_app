@@ -35,14 +35,7 @@ class Authentication {
     try {
       UserCredential userCredential = await _firebaseAuth
           .createUserWithEmailAndPassword(email: email, password: password);
-      if (userCredential.user != null) {
-        if (userCredential.user?.uid != null) {
-          FireStoreServices(userUid: userCredential.user!.uid).addUser();
-        }
-        return 'success';
-      } else {
-        return 'Something went wrong!';
-      }
+      return 'Operation successful';
     } on FirebaseAuthException catch (e) {
       return e.message;
     } catch (e) {

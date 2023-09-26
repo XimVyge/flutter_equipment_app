@@ -67,11 +67,11 @@ class EquipmentRequestListView extends StatelessWidget {
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  EquipmentDetailView(equipment)));
+                                                  EquipmentDetailView(equipment, ViewType.request)));
                                     },
                                     leading: Image.network(equipment.image),
                                     title: Text(equipment.code),
-                                    trailing: Text(equipment.specs),
+                                    trailing: Text(equipment.description),
                                   ),
                                 );
                               },
@@ -134,7 +134,7 @@ class EquipmentRequestListView extends StatelessWidget {
                             required: true,
                             validator: (value) {
                               if (value!.isEmpty || value.trim().isEmpty) {
-                                return 'Please enter name.';
+                                return 'Please enter code.';
                               }
                               return null;
                             },
@@ -156,7 +156,7 @@ class EquipmentRequestListView extends StatelessWidget {
                             required: true,
                             validator: (value) {
                               if (value!.isEmpty || value.trim().isEmpty) {
-                                return 'Please enter quantity.';
+                                return 'Please enter specs.';
                               }
                               return null;
                             },

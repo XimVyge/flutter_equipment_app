@@ -64,6 +64,10 @@ class EquipmentAssignedListView extends StatelessWidget {
                                 data.docs[index]['description'];
                                 equipment.specs = data.docs[index]['specs'];
                                 equipment.image = data.docs[index]['image'];
+                                equipment.employeeName = data.docs[index]['employeeName'];
+                                equipment.schedule = data.docs[index]['schedule'];
+                                equipment.position = data.docs[index]['position'];
+                                equipment.purpose = data.docs[index]['purpose'];
                                 return Padding(
                                   padding: const EdgeInsets.only(bottom: 8),
                                   child: ListTile(
@@ -72,11 +76,11 @@ class EquipmentAssignedListView extends StatelessWidget {
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  EquipmentDetailView(equipment)));
+                                                  EquipmentDetailView(equipment, ViewType.assigned)));
                                     },
                                     leading: Image.network(equipment.image),
                                     title: Text(equipment.code),
-                                    trailing: Text(equipment.specs),
+                                    trailing: Text(equipment.description),
                                   ),
                                 );
                               },

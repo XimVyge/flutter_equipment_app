@@ -29,12 +29,6 @@ class _AuthenticationViewState extends State<AuthenticationView> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/images/background.png"),
-            fit: BoxFit.cover,
-          ),
-        ),
         child: Form(
           key: _loginForm,
           child: Center(
